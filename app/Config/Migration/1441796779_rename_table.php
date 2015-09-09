@@ -15,23 +15,6 @@ class RenameTable extends CakeMigration {
  */
 	public $migration = array(
 		'up' => array(
-			'create_field' => array(
-				'genres' => array(
-					'indexes' => array(
-						'PRIMARY' => array('column' => 'id', 'unique' => 1),
-					),
-				),
-				'plans' => array(
-					'indexes' => array(
-						'PRIMARY' => array('column' => 'id', 'unique' => 1),
-					),
-				),
-				'spots' => array(
-					'indexes' => array(
-						'PRIMARY' => array('column' => 'id', 'unique' => 1),
-					),
-				),
-			),
 			'create_table' => array(
 				'plan_spots' => array(
 					'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
@@ -52,11 +35,6 @@ class RenameTable extends CakeMigration {
 			),
 		),
 		'down' => array(
-			'drop_field' => array(
-				'genres' => array('indexes' => array('PRIMARY')),
-				'plans' => array('indexes' => array('PRIMARY')),
-				'spots' => array('indexes' => array('PRIMARY')),
-			),
 			'drop_table' => array(
 				'plan_spots'
 			),
