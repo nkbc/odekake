@@ -1,0 +1,11 @@
+{
+    "name": "cakephp",
+    "require": {
+        "cakephp/cakephp": "2.6.11",
+       "composer/installers": "*",
+       "cakephp/debug_kit": ">=2.2.0"
+    },
+    "config": {
+        "vendor-dir": "vendors/"
+    }
+}
