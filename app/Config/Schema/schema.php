@@ -12,12 +12,12 @@ class AppSchema extends CakeSchema {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'name' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'indexes' => array(
-			
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_bin', 'engine' => 'InnoDB')
 	);
 
-	public $plan-spots = array(
+	public $plan_spots = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'plan_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'spot_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
@@ -26,7 +26,7 @@ class AppSchema extends CakeSchema {
 		'trans' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'distance' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'indexes' => array(
-			
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_bin', 'engine' => 'InnoDB')
 	);
@@ -39,7 +39,7 @@ class AppSchema extends CakeSchema {
 		'cost' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'season' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'indexes' => array(
-			
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_bin', 'engine' => 'InnoDB', 'comment' => 'palnsですよーって')
 	);
@@ -64,7 +64,7 @@ class AppSchema extends CakeSchema {
 		'latitude' => array('type' => 'float', 'null' => false, 'default' => null, 'unsigned' => false),
 		'longitude' => array('type' => 'float', 'null' => false, 'default' => null, 'unsigned' => false),
 		'indexes' => array(
-			
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_bin', 'engine' => 'InnoDB')
 	);
