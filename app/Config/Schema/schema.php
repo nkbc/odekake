@@ -58,7 +58,6 @@ class AppSchema extends CakeSchema {
 	public $spots = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'name' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
-		'spot-tag_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'genre_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'comment' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'latitude' => array('type' => 'float', 'null' => false, 'default' => null, 'unsigned' => false),
