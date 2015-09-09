@@ -13,4 +13,6 @@ class Plan extends AppModel {
  */
 	public $displayField = 'name';
 
+    public $hasMany = array('PlanSpot');
+
 }
