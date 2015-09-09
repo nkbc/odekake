@@ -3,7 +3,6 @@
 ## composer
 Plugin/*
 vendors/*
-composer.phar
 
 ## CakePHP
 app/tmp/*
