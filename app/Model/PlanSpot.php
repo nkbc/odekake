@@ -6,12 +6,15 @@ App::uses('AppModel', 'Model');
  */
 class PlanSpot extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'comment';
+	public $belongsTo = array(
+		'Spot' => array(
+			'className' => 'Spot',
+			'foreignKey' => 'spot_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 
 /**
  * Validation rules
