@@ -14,10 +14,10 @@
 
 		<?php foreach ($plan['PlanSpot'] as $view): ?>
 			<img src="http://yajidesign.com/i/0213/tnm.png",height="100" width="100">	
-			<?php if($view['trans'] == '車'):?><img src="http://www.carsensor.net/CSphoto/cat/TO/S199/TO_S199_F001_M001_1_L.jpg",height="200px" width="200px"> 
+			<?php if($view['trans'] == '車'):?><img src="http://www.carsensor.net/CSphoto/cat/TO/S199/TO_S199_F001_M001_1_L.jpg",height="150px" width="150px"> 
 			<?php endif; ?>			
 			</br>	
-			<img src="http://members2.jcom.home.ne.jp/sakura77/TABLE/P1010477.JPG" style=" vertical-align: middle;height:150;, width:200;">
+			<img src="http://members2.jcom.home.ne.jp/sakura77/TABLE/P1010477.JPG" style=" vertical-align: middle;height:200px;, width:200px;">
 			
 			<font size="100"><?php echo h($view['Spot']['name']); ?></font>
 			</br>
