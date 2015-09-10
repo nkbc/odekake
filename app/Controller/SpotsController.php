@@ -53,8 +53,21 @@ class SpotsController extends AppController {
 			$this->Ring->bindUp();
 
 			if ($this->Spot->saveAll($this->request->data)) {
-				$this->Session->setFlash(__('The spot has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$datas = $this->Spot->find('all',[
+					'order' => [
+							'Spot.id' => 'desc'
+						],
+						'limit' => 1
+				]);
+
+				$datas[0]['Spot']['imageurl'] = $datas[0]['Spot']['image']['file_path'];
+
+				if($this->Spot->saveAll($datas)){
+					$this->Session->setFlash(__('The spot has been saved.'));
+					return $this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The spot could not be saved. Please, try again'));
+				}
 			} else {
 				$this->Session->setFlash(__('The spot could not be saved. Please, try again'));
 			}
