@@ -12,12 +12,7 @@ $toptitle = '１日おでかけ';
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-<<<<<<< Updated upstream
-		<?php echo $toptitle ?>:
-=======
-
-		<?php echo $cakeDescription ?>:
->>>>>>> Stashed changes
+		<?php echo $toptitle ?>
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
@@ -34,7 +29,7 @@ $toptitle = '１日おでかけ';
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
-			<div Align="right">	
+			<div Align="right">
 				<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>
 			</div>
 		</div>
