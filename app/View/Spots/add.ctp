@@ -9,7 +9,7 @@
 		// echo $this->Form->input('comment');
 		// echo $this->Form->input('latitude');
 		// echo $this->Form->input('longitude');
-		echo $this->Form->input('name',['label' => 'スポット名']);	//	変更
+		echo $this->Form->input('name',array('label' => 'スポット名','type' => 'text'));	//	変更
 		echo $this->Form->input('genre_id',['label' => 'ジャンル']);	//	変更
 		echo $this->Form->input('comment',['label' => '説明']);	//	変更
 		echo $this->Form->input('latitude',['label' => '緯度']);	//	変更
