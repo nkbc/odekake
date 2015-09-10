@@ -79,6 +79,7 @@ class AppSchema extends CakeSchema {
 		'comment' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'latitude' => array('type' => 'float', 'null' => false, 'default' => null, 'unsigned' => false),
 		'longitude' => array('type' => 'float', 'null' => false, 'default' => null, 'unsigned' => false),
+		'imageurl' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8_bin', 'charset' => 'utf8'),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
