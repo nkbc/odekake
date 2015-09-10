@@ -7,8 +7,9 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  * @property SessionComponent $Session
  */
-class TopsController extends AppController {
-
+class PlansController extends AppController {
+	// ここで使用したいモデルを指定する
+     public $uses = array('Plan', 'PlanSpot','Spot');
 /**
  * Components
  *
@@ -16,17 +17,15 @@ class TopsController extends AppController {
  */
 	public $components = array('Paginator', 'Session');
 
-	public $uses = array('Plan');
-
-
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Plan->recursive = 0;
+		$this->Plan->recursive = 1;
 		$this->set('plans', $this->Paginator->paginate());
+
 	}
 
 /**
@@ -40,13 +39,8 @@ class TopsController extends AppController {
 		if (!$this->Plan->exists($id)) {
 			throw new NotFoundException(__('Invalid plan'));
 		}
-		$this->Plan->recursive = 2;
-
 		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
-		$plan =$this->Plan->find('first', $options);
-		$this->log($plan,LOG_DEBUG);
-		$this->set('plan', $plan);
-		
+		$this->set('plan', $this->Plan->find('first', $options));
 	}
 
 /**
@@ -57,13 +51,21 @@ class TopsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Plan->create();
-			if ($this->Plan->save($this->request->data)) {
+			// if ($this->Plan->save($this->request->data)) {
+			 if ($this->Plan->saveAssociated($this->request->data)) {
+
 				$this->Session->setFlash(__('The plan has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The plan could not be saved. Please, try again.'));
 			}
 		}
+	$this->set( 'select1', $this->Spot->find( 'list',
+  array(
+    'fields' => array( 'id', 'name')
+  )));
+
+
 	}
 
 /**
@@ -110,17 +112,4 @@ class TopsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-
-
-
-/*	public function detail($id = null){
-	
-		if (!$this->Plan->exists($id)) {
-			throw new NotFoundException(__('Invalid plan'));
-		}
-		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
-		$this->set('plan', $this->Plan->find('first', $options));
-	
-	}*/
-
 }
