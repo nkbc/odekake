@@ -40,8 +40,13 @@ class TopsController extends AppController {
 		if (!$this->Plan->exists($id)) {
 			throw new NotFoundException(__('Invalid plan'));
 		}
+		$this->Plan->recursive = 2;
+
 		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
-		$this->set('plan', $this->Plan->find('first', $options));
+		$plan =$this->Plan->find('first', $options);
+		$this->log($plan,LOG_DEBUG);
+		$this->set('plan', $plan);
+		
 	}
 
 /**
@@ -105,4 +110,17 @@ class TopsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+
+
+/*	public function detail($id = null){
+	
+		if (!$this->Plan->exists($id)) {
+			throw new NotFoundException(__('Invalid plan'));
+		}
+		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
+		$this->set('plan', $this->Plan->find('first', $options));
+	
+	}*/
+
 }
