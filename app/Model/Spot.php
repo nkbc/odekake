@@ -1,11 +1,15 @@
 <?php
 App::uses('AppModel', 'Model');
+
+
 /**
  * Spot Model
  *
  * @property Genre $Genre
  */
 class Spot extends AppModel {
+
+public $bindFields = array(array( 'field' => 'image' ));
 
 /**
  * Display field
@@ -14,6 +18,7 @@ class Spot extends AppModel {
  */
 	public $displayField = 'name';
 
+	public $actsAs = array('Filebinder.Bindable');
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

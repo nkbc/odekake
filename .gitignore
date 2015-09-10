@@ -8,6 +8,7 @@ vendors/*
 app/tmp/*
 app/files/*
 app/webroot/files/*
+app/webroot/img/*
 !empty
 *.pot
 
@@ -22,4 +23,3 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *~
-

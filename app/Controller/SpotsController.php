@@ -14,7 +14,7 @@ class SpotsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+	public $components = array('Paginator', 'Session','Filebinder.Ring');
 
 /**
  * index method
@@ -38,6 +38,7 @@ class SpotsController extends AppController {
 			throw new NotFoundException(__('Invalid spot'));
 		}
 		$options = array('conditions' => array('Spot.' . $this->Spot->primaryKey => $id));
+
 		$this->set('spot', $this->Spot->find('first', $options));
 	}
 
@@ -49,7 +50,9 @@ class SpotsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Spot->create();
-			if ($this->Spot->save($this->request->data)) {
+			$this->Ring->bindUp();
+
+			if ($this->Spot->saveAll($this->request->data)) {
 				$this->Session->setFlash(__('The spot has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {

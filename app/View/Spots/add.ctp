@@ -1,5 +1,5 @@
 <div class="spots form">
-<?php echo $this->Form->create('Spot'); ?>
+<?php echo $this->Form->create('Spot',['type' => 'file']); ?>
 	<fieldset>
 		<!-- <legend><?php echo __('Add Spot'); ?></legend> -->
 		<legend><?php echo __('スポットの追加'); ?></legend>	<!--	変更	-->
@@ -14,6 +14,7 @@
 		echo $this->Form->input('comment',['label' => '説明']);	//	変更
 		echo $this->Form->input('latitude',['label' => '緯度']);	//	変更
 		echo $this->Form->input('longitude',['label' => '経度']);	//	変更
+		echo $this->Form->input('image', array('type' => 'file'));
 	?>
 	</fieldset>
 <!-- <?php echo $this->Form->end(__('Submit')); ?> -->

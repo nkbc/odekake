@@ -33,6 +33,11 @@
 			<?php echo h($spot['Spot']['longitude']); ?>
 			&nbsp;
 		</dd>
+		<dd>
+			<?php echo $this->Label->image($spot['Spot']['image']); ?>
+			&nbsp;
+		</dd>
+
 	</dl>
 <?php echo $this->Form->button('前に戻る', array('type' => 'button', 'onClick' => 'history.back()')) . PHP_EOL; ?>		<!-- 変更	-->
 
