@@ -12,11 +12,14 @@ class Plan extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-
+//	Public $useTable = 'spots';
     public $hasMany = array(
-        'PlanSpot' => array(
-            'order' => 'sort'
-        )
+         'PlanSpot' => array(
+             'order' => 'sort'
+					)
     );
+
+
+
 
 }
