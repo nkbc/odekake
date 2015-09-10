@@ -12,7 +12,12 @@ $toptitle = '１日おでかけ';
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
+<<<<<<< Updated upstream
 		<?php echo $toptitle ?>:
+=======
+
+		<?php echo $cakeDescription ?>:
+>>>>>>> Stashed changes
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
@@ -21,8 +26,8 @@ $toptitle = '１日おでかけ';
 		echo $this->Html->css('cake.generic');	//CSS
 
 		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+		 echo $this->fetch('css');
+		 echo $this->fetch('script');
 	?>
 </head>
 <body>
