@@ -19,6 +19,10 @@ class ApisController extends AppController {
 	public $uses = array('Plan','Spot');
 
 
+    public function beforeFilter() {
+        $this->Auth->allow('plan_name', 'spot_name', 'spot_detail');
+    }
+
 
 public function plan_name(){
 	 //$this->RequestHandler->setCotent('json','application/json');
