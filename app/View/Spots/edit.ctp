@@ -25,14 +25,14 @@
 
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('レッツ アクティブ'); ?></h3>
 	<ul>
 
 		<!-- <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Spot.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Spot.id'))); ?></li> -->
 		<li><?php echo $this->Form->postLink(__('このスポットを削除'), array('action' => 'delete', $this->Form->value('Spot.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Spot.id'))); ?></li>
 		<!-- <li><?php echo $this->Html->link(__('List Spots'), array('action' => 'index')); ?></li> -->
 		<li><?php echo $this->Html->link(__('スポット一覧'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Genres'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Genre'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('ジャンル一覧'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('ジャンルの登録'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
