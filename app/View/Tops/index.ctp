@@ -39,6 +39,24 @@
 						));	
 		?>
 
+<!--キーワード検索-->
+		
+			<div style='margin-top:20px'><h2><?php echo __('キーワード検索'); ?></h2>
+			
+			<?php echo $this->Form->create();
+					echo $this->Form->input('keyword', array(
+							'style' => 'width:100px;height:15px',
+					        'div' => false,
+					        'label' => false
+					    )		
+					);?>
+			
+		<?php echo $this->Form->submit(__('検索'), array(
+				        'div' => false
+				    )
+				);	
+		
+			echo $this->Form->end();?></div>
 
 		
 <!--プラン一覧のとこ-->
@@ -85,25 +103,11 @@
 	</div>
 </div>
 
-<!--Actions-->
+<!--Actions とりあえず消してます
 
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('プランを登録'), array('controller' => 'plans', 'action' => 'add')); ?></li>
-		<li><?php echo $this->Form->create();
-			echo $this->Form->input('keyword', array(
-					'style' => 'width:100px',
-			        'div' => false,
-			        'label' => 'キーワード検索'
-			    )		
-			);	
-	
-		echo $this->Form->submit(__('検索'), array(
-		        'div' => false
-		    )
-		);	
-
-	echo $this->Form->end();?></li>
-	</ul>
+		<?php echo $this->Html->link(__('プランを登録'), array('controller' => 'plans', 'action' => 'add')); ?>
 </div>
+
+-->
