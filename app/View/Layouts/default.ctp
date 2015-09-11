@@ -37,7 +37,7 @@ $toptitle = '１日おでかけ';
 			<div Align="right">
 				<!---ログイン判定ここから-------------->
 				<?php if (!AuthComponent::user()):
-				 echo 'ログインしてください';
+				 echo $this->Html->link(__('ユーザ登録はこちら'), array('controller' => 'users', 'action' => 'add'));
 			 else:
 				 echo 'ようこそ'.AuthComponent::user('username').'さん!' ;
 			 endif;

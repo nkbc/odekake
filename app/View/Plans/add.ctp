@@ -24,14 +24,15 @@
 <div class="plans form">
 
 <body>
-	<?php $a ="New Spot"; ?>
-			<h1><?php echo $this->Html->link($a, array('controller' => 'tops', 'action' => 'index')); ?></h1>
+
 <?php echo $this->Form->create('Plan'); ?>
+
+<h2><?php echo __('プランの登録'); ?></h2>
+
 	<fieldset>
-		<?php echo __('プランの登録画面です'); ?>
 	<?php
 
-		echo $this->Form->input('name',array('type' => 'text') );
+		echo $this->Form->input('name',array('label' => 'プラン名','type' => 'text') );
 		echo '出発地を選択してください';
 		echo $this->Form->input('start', array(
 												 'legend' => false,
@@ -40,9 +41,9 @@
 ));
 
 		//echo $this->Form->input('start', array('type' => 'text'));
-		echo $this->Form->input('member', array('type' => 'text'));
-		echo $this->Form->input('cost');
-		echo $this->Form->input('season', array('type' => 'text'));
+		echo $this->Form->input('member', array('label' => '誰と行く？','type' => 'text'));
+		echo $this->Form->input('cost',array('label' => '予算'));
+		echo $this->Form->input('season', array('label' => 'おススメの季節','type' => 'text'));
 		?>
 		</fieldset>
 
@@ -64,14 +65,15 @@ for($i=1;$i<4;$i++){
 
 <?php
 		echo $this->Form->input( 'PlanSpot.'.$i.'.spot_id', array(
+      'label' => 'スポット名',
 			'type' => 'select',
 			'options' => $select1));
 
 
-		 echo $this->Form->input('PlanSpot.'.$i.'.sort', array('default' => "$i", 'class' => 'sort'));
-		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('default' => 'ここにコメントを表示できたらいいな'));
-		echo $this->Form->input('PlanSpot.'.$i.'.trans', array('type' => 'text'));
-		echo $this->Form->input('PlanSpot.'.$i.'.distance', array('type' => 'int'));
+		 echo $this->Form->input('PlanSpot.'.$i.'.sort', array('label' => '行く順番','default' => "$i", 'class' => 'sort'));
+		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('label' => 'コメント','type' => 'text','default' => 'コメント'));
+		echo $this->Form->input('PlanSpot.'.$i.'.trans', array('label' => '移動手段','type' => 'text'));
+		echo $this->Form->input('PlanSpot.'.$i.'.distance', array('label' => 'ここまでの距離','type' => 'int'));
 ?>
 
 		</div></div>
@@ -82,11 +84,22 @@ for($i=1;$i<4;$i++){
 
 <script type="text/javascript">
 new DraggableGrid('grid', { handleClass: 'handle', onDrop: function(){
-$(sort).fadeIn(200)
+//var array =
+//console.log(array);
+var number = 1;
+$(".sort").each(function(){
+  $(this).val(number++);
+//  console.log($(this).val());
+});
+
+  //sortクラスを全部撮ってくる
+//foreachをまわす
 }
 });
 </script>
 	</fieldset>
+
+
 
   <?php
     for($count=0;$count<27;$count++){
@@ -94,13 +107,14 @@ $(sort).fadeIn(200)
     }?>
 
 <?php echo $this->Form->end(__('登録する')); ?>
+
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('レッツ アクション'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Plans'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('New Spot'), array('controller' => 'spots', 'action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('プランの一覧'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('スポットを新しく追加する'), array('controller' => 'spots', 'action' => 'index')); ?></li>
 
 	</ul>
 </div>

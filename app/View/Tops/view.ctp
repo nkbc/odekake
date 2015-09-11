@@ -1,8 +1,6 @@
 <div class="plans view">
 
-<?php
-$no = $_REQUEST["no"];
-?>
+
 <!--<h2><?php echo __('Plan'); ?></h2>-->
 	<h2>Plan:<?php echo h($plan['Plan']['name']); ?></h2>
 
@@ -70,9 +68,6 @@ $no = $_REQUEST["no"];
 
 
 
-	<?php if $no == 0:?>
-	<p><a href="http://192.168.33.10/odekake/tops/view/$plan['Plan']['id']?no=1"></a></p>
-	<?php else ?>
 
 
 

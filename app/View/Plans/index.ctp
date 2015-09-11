@@ -2,7 +2,7 @@
 	<!DOCTYPE html>
 	<html lang="ja">
 
-	<h2><?php echo __('プランの一覧です'); ?></h2>
+	<h2><?php echo __('プランの一覧'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
@@ -29,7 +29,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('見る'), array('action' => 'view', $plan['Plan']['id'])); ?>
 			<?php echo $this->Html->link(__('編集'), array('action' => 'edit', $plan['Plan']['id'])); ?>
-			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $plan['Plan']['id']))); ?>
+			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('本当に削除しますか？', $plan['Plan']['id']))); ?>
 		</td>
 	</tr>
 
@@ -53,10 +53,10 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('レッツ アクション'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Plan'), array('action' => 'add')); ?></li>
-    <li><?php echo $this->Html->link(__('New Spot'), array('controller' => 'spots', 'action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('プランの作成'), array('action' => 'add')); ?></li>
+    <li><?php echo $this->Html->link(__('スポットの作成'), array('controller' => 'spots', 'action' => 'index')); ?></li>
 
 	</ul>
 </div>
