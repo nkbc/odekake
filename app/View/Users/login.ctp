@@ -6,9 +6,9 @@
 <?php echo $this->Form->create('User'); ?>
     <fieldset>
         <legend><?php echo __('ログイン'); ?></legend>
-        <?php echo $this->Form->input('username');
-        echo $this->Form->input('password');
+        <?php echo $this->Form->input('username',array('label' => 'お名前'));
+        echo $this->Form->input('password',array('label' => 'パスワード'));
     ?>
     </fieldset>
-<?php echo $this->Form->end(__('Login')); ?>
+<?php echo $this->Form->end(__('ログイン')); ?>
 </div>

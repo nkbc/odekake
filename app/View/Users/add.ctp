@@ -3,8 +3,8 @@
 <?php echo $this->Form->create('User'); ?>
     <fieldset>
         <legend><?php echo __('新規会員登録'); ?></legend>
-        <?php echo $this->Form->input('username');
-        echo $this->Form->input('password');
+        <?php echo $this->Form->input('username',array('label' => 'お名前'));
+        echo $this->Form->input('password',array('label' => 'パスワード'));
         echo $this->Form->input('role', array(
             'options' => array('admin' => 'Admin', 'author' => 'Author')
         ));
@@ -13,9 +13,9 @@
 <?php echo $this->Form->end(__('登録')); ?>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('レッツ アクション'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('ユーザー一覧'), array('action' => 'index')); ?></li>
 	</ul>
 </div>
