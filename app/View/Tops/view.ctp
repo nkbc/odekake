@@ -44,7 +44,7 @@
 
 			<div style="border-style: solid ; border-width: 1px; padding: 10px 5px 10px 25px; border-color: black; color: blue; background-color: white; width: 600px;  border-radius: 10px;overflow : auto">
 				<font style="font-size:30px"><?php echo h($view['Spot']['name']); ?></font></br>
-				<?php echo $this->Html->link($view['Spot']['name'], array('controller' => 'spots', 'action' => 'view',$plan['PlanSpot']['spot_id'])); ?>
+				<?php echo $this->Html->link($view['Spot']['name'], array('controller' => 'spots', 'action' => 'view',$view['PlanSpot']['spot_id'])); ?>
 				<?php if($view['Spot']['imageurl']) :?>
 					<img src="<?php echo $view['Spot']['imageurl'] ?>"　style="height:150px; width:200px;vertical-align: middle;">
 				<?php else: ?>
