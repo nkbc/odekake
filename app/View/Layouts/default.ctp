@@ -13,7 +13,7 @@ $toptitle = '１日おでかけ';
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $toptitle ?>:
+		<?php echo $toptitle ?>
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
@@ -22,19 +22,25 @@ $toptitle = '１日おでかけ';
 		echo $this->Html->css('cake.generic');	//CSS
 
 		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+		 echo $this->fetch('css');
+		 echo $this->fetch('script');
 	?>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
+<<<<<<< HEAD
 			<h1 style="font-size:50px;padding-top:10px;"><?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
 			<div Align="right">	
 				<?php echo $this->Html->link(__('トップページ'), array('controller' => 'tops', 'action' => 'index')); ?>
 				<!--<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>-->
 
 				<?php echo $this->Html->link(__('ログイン'), array('controller' => 'users', 'action' => 'login')); ?>
+=======
+			<h1><?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
+			<div Align="right">
+				<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>
+>>>>>>> 53524ac2c9d4628e8b1c3c8fa7c4343b3730417b
 			</div>
 		</div>
 		<div id="content">

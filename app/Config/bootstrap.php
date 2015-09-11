@@ -73,6 +73,7 @@ App::build(array(
 CakePlugin::load('DebugKit');
 CakePlugin::load('Migrations');
 CakePlugin::load('Filebinder');
+CakePlugin::load('Search');
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By default CakePHP bundles two filters:

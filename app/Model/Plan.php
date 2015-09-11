@@ -19,8 +19,36 @@ class Plan extends AppModel {
              'order' => 'sort'
 					)
     );
+	
+	 public $actsAs = array(
+	
+	        'Search.Searchable'
+	
+	    );
+	    
+	
+    public $filterArgs = array(
+
+        'keyword' => array(
+
+            'type' => 'like',
+
+            'field' => array('Plan.name', 'Plan.start')
+
+        ),
+        
+         'genre_id' => array(
+
+         'type' => 'query',
+         'method' => 'findByGenre'
+        ),
 
 
-
-
+    );
+	
+	public function findByGenre($data = array()) {
+		$condition[1] = array(
+			'PlanSpot.id' => $data['genre_id']
+		);
+	}
 }

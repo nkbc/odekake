@@ -2,17 +2,17 @@
 	<!DOCTYPE html>
 	<html lang="ja">
 
-	<h2><?php echo __('Plans'); ?></h2>
+	<h2><?php echo __('プランの一覧です'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('start'); ?></th>
-			<th><?php echo $this->Paginator->sort('member'); ?></th>
-			<th><?php echo $this->Paginator->sort('cost'); ?></th>
-			<th><?php echo $this->Paginator->sort('season'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('id','ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('name','プラン名'); ?></th>
+			<th><?php echo $this->Paginator->sort('start','スタート地点'); ?></th>
+			<th><?php echo $this->Paginator->sort('member','誰と行くか'); ?></th>
+			<th><?php echo $this->Paginator->sort('cost','費用'); ?></th>
+			<th><?php echo $this->Paginator->sort('season','オススメの季節'); ?></th>
+			<th class="actions"><?php echo __('編集'); ?></th>
 	</tr>
 	</thead>
 
@@ -27,9 +27,9 @@
 		<td><?php echo h($plan['Plan']['cost']); ?>&nbsp;</td>
 		<td><?php echo h($plan['Plan']['season']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $plan['Plan']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $plan['Plan']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $plan['Plan']['id']))); ?>
+			<?php echo $this->Html->link(__('見る'), array('action' => 'view', $plan['Plan']['id'])); ?>
+			<?php echo $this->Html->link(__('編集'), array('action' => 'edit', $plan['Plan']['id'])); ?>
+			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $plan['Plan']['id']))); ?>
 		</td>
 	</tr>
 
@@ -56,7 +56,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Plan'), array('action' => 'add')); ?></li>
-    <li><?php echo $this->Html->link(__('New Spot'), array('controller' => 'plan', 'action' => 'index')); ?></li>
+    <li><?php echo $this->Html->link(__('New Spot'), array('controller' => 'spots', 'action' => 'index')); ?></li>
 
 	</ul>
 </div>

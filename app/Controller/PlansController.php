@@ -60,11 +60,14 @@ class PlansController extends AppController {
 				$this->Session->setFlash(__('The plan could not be saved. Please, try again.'));
 			}
 		}
+
 	$this->set( 'select1', $this->Spot->find( 'list',
   array(
     'fields' => array( 'id', 'name')
   )));
 
+      $data = $this->request->data;
+$this->set('test',$data);
 
 	}
 

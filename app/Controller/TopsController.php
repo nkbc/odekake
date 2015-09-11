@@ -14,10 +14,30 @@ class TopsController extends AppController {
  *
  * @var array
  */
+<<<<<<< HEAD
 	public $components = array('Paginator', 'Session','Filebinder.Ring');
 
 	public $uses = array('Plan','Spot');
 
+=======
+	public $components = array(
+		'Paginator', 
+		'Session',
+		'Search.Prg' => array(
+
+			'commonProcess' => array(
+
+				'paramType' => 'querystring',
+
+				'filterEmpty' =>  true,
+			)
+		)
+	);		
+
+	public $uses = array('Plan','PlanSpot','Spot');
+>>>>>>> 53524ac2c9d4628e8b1c3c8fa7c4343b3730417b
+
+	public $presetVars = true;
 
 
 /**
@@ -27,6 +47,11 @@ class TopsController extends AppController {
  */
 	public function index() {
 		$this->Plan->recursive = 0;
+		
+	    $this->Prg->commonProcess();
+
+    	$this->Paginator->settings['conditions'] = $this->Plan->parseCriteria($this->Prg->parsedParams());
+
 		$this->set('plans', $this->Paginator->paginate());
 	}
 
