@@ -45,7 +45,7 @@
 			<div style="border-style: solid ; border-width: 1px; padding: 10px 5px 10px 25px; border-color: black; color: blue; background-color: white; width: 600px;  border-radius: 10px;overflow : auto">
 				<font style="font-size:30px"><?php echo h($view['Spot']['name']); ?></font></br>
 				<?php if($view['Spot']['imageurl']) :?>
-					<img src="<?php $view['Spot']['imageurl'] ?>"　style="height:150px; width:200px;vertical-align: middle;">
+					<img src="<?php echo $view['Spot']['imageurl'] ?>"　style="height:150px; width:200px;vertical-align: middle;">
 				<?php else: ?>
 				<img src="http://www.cocowill.com/wordpress/wp-content/themes/cocowill/img/noimage.png"　style="height:150px; width:200px;vertical-align: middle;">
 				<?php endif; ?>
