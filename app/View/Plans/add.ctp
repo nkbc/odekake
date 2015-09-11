@@ -69,7 +69,7 @@ for($i=1;$i<4;$i++){
 
 
 		 echo $this->Form->input('PlanSpot.'.$i.'.sort', array('default' => "$i", 'class' => 'sort'));
-		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('default' => 'ここにコメントを表示できたらいいな'));
+		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('type' => 'text'));
 		echo $this->Form->input('PlanSpot.'.$i.'.trans', array('type' => 'text'));
 		echo $this->Form->input('PlanSpot.'.$i.'.distance', array('type' => 'int'));
 ?>
@@ -82,11 +82,22 @@ for($i=1;$i<4;$i++){
 
 <script type="text/javascript">
 new DraggableGrid('grid', { handleClass: 'handle', onDrop: function(){
-$(sort).fadeIn(200)
+//var array =
+//console.log(array);
+var number = 1;
+$(".sort").each(function(){
+  $(this).val(number++);
+//  console.log($(this).val());
+});
+
+  //sortクラスを全部撮ってくる
+//foreachをまわす
 }
 });
 </script>
 	</fieldset>
+
+
 
   <?php
     for($count=0;$count<27;$count++){
@@ -94,6 +105,7 @@ $(sort).fadeIn(200)
     }?>
 
 <?php echo $this->Form->end(__('登録する')); ?>
+
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
