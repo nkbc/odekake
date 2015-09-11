@@ -65,9 +65,8 @@ class PlansController extends AppController {
   array(
     'fields' => array( 'id', 'name')
   )));
-
-      $data = $this->request->data;
-$this->set('test',$data);
+  $radio = $this->Spot->find('list', array('fields' => array('name', 'name')));
+  $this->set('radio', $radio);
 
 	}
 
