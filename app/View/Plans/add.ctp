@@ -20,7 +20,7 @@
 
 <!--
 変更点ここまで
--->!
+-->
 <div class="plans form">
 
 <body>
