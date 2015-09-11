@@ -27,7 +27,7 @@
 		<td><?php echo h($plan['Plan']['cost']); ?>&nbsp;</td>
 		<td><?php echo h($plan['Plan']['season']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('見る'), array('action' => 'view', $plan['Plan']['id'])); ?>
+			<?php echo $this->Html->link(__('見る'), array('controller' => 'tops','action' => 'view', $plan['Plan']['id'])); ?>
 			<?php echo $this->Html->link(__('編集'), array('action' => 'edit', $plan['Plan']['id'])); ?>
 			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('本当に削除しますか？', $plan['Plan']['id']))); ?>
 		</td>

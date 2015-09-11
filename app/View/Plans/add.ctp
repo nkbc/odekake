@@ -71,7 +71,7 @@ for($i=1;$i<4;$i++){
 
 
 		 echo $this->Form->input('PlanSpot.'.$i.'.sort', array('label' => '行く順番','default' => "$i", 'class' => 'sort'));
-		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('label' => 'コメント','type' => 'text','default' => 'コメント'));
+		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('label' => 'コメント','type' => 'text'));
 		echo $this->Form->input('PlanSpot.'.$i.'.trans', array('label' => '移動手段','type' => 'text'));
 		echo $this->Form->input('PlanSpot.'.$i.'.distance', array('label' => 'ここまでの距離','type' => 'int'));
 ?>
