@@ -36,6 +36,9 @@
 			<?php elseif($view['trans'] == '電車' || $view['trans'] == '地下鉄'):?>
 				<img src="http://www.geocities.jp/motorcity_pit8419/subway/F1529.jpg" height="150px" width="150px" style="vertical-align: middle">
 					地下鉄
+			<?php elseif($view['trans'] == 'バス'):?>
+				<img src="http://www.town.minamichita.lg.jp/main/soumu/images/bus1.jpg" height="150px" width="150px" style="vertical-align: middle">
+					地下鉄
 				<?php else:?>
 					ほふく前進でもして行くんだな!m9(^Д^)ﾌﾟｷﾞｬｰ
 			<?php endif; ?>
