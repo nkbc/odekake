@@ -46,7 +46,8 @@ $toptitle = 'おでかけ@Fukuoka';
 				<?php echo $this->Html->link(__('トップページ'), array('controller' => 'tops', 'action' => 'index')); ?>
 				<?php if(AuthComponent::user('id')): ?>
 				<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>
-
+				<?php echo $this->Html->link(__('プランの追加'), array('controller' => 'plans', 'action' => 'index')); ?>
+				<?php echo $this->Html->link(__('スポットの追加'), array('controller' => 'spots', 'action' => 'index')); ?>
 				<?php echo $this->Html->link(__('ログアウト'), array('controller' => 'users', 'action' => 'logout')); ?>
 			<?php else: ?>
 				<?php echo $this->Html->link(__('ログイン'), array('controller' => 'users', 'action' => 'login')); ?>
