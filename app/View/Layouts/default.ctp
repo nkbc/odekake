@@ -34,8 +34,12 @@ $toptitle = '１日おでかけ';
 
 			<div Align="right">	
 				<?php echo $this->Html->link(__('トップページ'), array('controller' => 'tops', 'action' => 'index')); ?>
+				<?php if(AuthComponent::user('id')): ?>
 				<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>
+				<?php echo $this->Html->link(__('ログアウト'), array('controller' => 'users', 'action' => 'logout')); ?>
+			<?php else: ?>
 				<?php echo $this->Html->link(__('ログイン'), array('controller' => 'users', 'action' => 'login')); ?>
+			<?php endif ?>
 			</div>
 
 		</div>
