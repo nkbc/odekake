@@ -12,7 +12,8 @@ class Plan extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-	public $actsAs = array('Filebinder.Bindable');
+	public $actsAs = array('Filebinder.Bindable','Search.Searchable');
+	
 //	Public $useTable = 'spots';
     public $hasMany = array(
          'PlanSpot' => array(
@@ -20,12 +21,6 @@ class Plan extends AppModel {
 					)
     );
 	
-	 public $actsAs = array(
-	
-	        'Search.Searchable'
-	
-	    );
-	    
 	
     public $filterArgs = array(
 

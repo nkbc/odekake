@@ -14,15 +14,11 @@ class TopsController extends AppController {
  *
  * @var array
  */
-<<<<<<< HEAD
-	public $components = array('Paginator', 'Session','Filebinder.Ring');
 
-	public $uses = array('Plan','Spot');
-
-=======
 	public $components = array(
 		'Paginator', 
 		'Session',
+		'Filebinder.Ring',
 		'Search.Prg' => array(
 
 			'commonProcess' => array(
@@ -35,7 +31,6 @@ class TopsController extends AppController {
 	);		
 
 	public $uses = array('Plan','PlanSpot','Spot');
->>>>>>> 53524ac2c9d4628e8b1c3c8fa7c4343b3730417b
 
 	public $presetVars = true;
 
