@@ -1,6 +1,6 @@
 <!--ジャンルのとこ-->
 
-<div class="plans index">
+<div>
 
 	<h2><?php echo __('ジャンル'); ?></h2>
 
