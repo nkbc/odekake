@@ -24,15 +24,12 @@
 <div class="plans form">
 
 <body>
-
-
 	<?php $a ="New Spot"; ?>
 			<h1><?php echo $this->Html->link($a, array('controller' => 'tops', 'action' => 'index')); ?></h1>
 <?php echo $this->Form->create('Plan'); ?>
 	<fieldset>
 		<?php echo __('プランの登録画面です'); ?>
 	<?php
-
 
 		echo $this->Form->input('name',array('type' => 'text') );
 		echo '出発地を選択してください';
@@ -71,29 +68,31 @@ for($i=1;$i<4;$i++){
 			'options' => $select1));
 
 
-		echo $this->Form->input('PlanSpot.'.$i.'.sort', array('default' => "$i", 'class' => 'sort'));
+		 echo $this->Form->input('PlanSpot.'.$i.'.sort', array('default' => "$i", 'class' => 'sort'));
 		echo $this->Form->input('PlanSpot.'.$i.'.comment', array('default' => 'ここにコメントを表示できたらいいな'));
 		echo $this->Form->input('PlanSpot.'.$i.'.trans', array('type' => 'text'));
 		echo $this->Form->input('PlanSpot.'.$i.'.distance', array('type' => 'int'));
 ?>
 
 		</div></div>
-
 		<?php
 }
-
 	?>
 </div>
 
 <script type="text/javascript">
 new DraggableGrid('grid', { handleClass: 'handle', onDrop: function(){
-$(sort).fadeIn(200);
+$(sort).fadeIn(200)
 }
 });
 </script>
 	</fieldset>
-	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>
-	<br> <br>
+
+  <?php
+    for($count=0;$count<27;$count++){
+      ?><br><?php
+    }?>
+
 <?php echo $this->Form->end(__('登録する')); ?>
 </div>
 <div class="actions">
@@ -106,5 +105,3 @@ $(sort).fadeIn(200);
 	</ul>
 </div>
 </body>
-
-</html>

@@ -29,14 +29,28 @@ $toptitle = '１日おでかけ';
 <body>
 	<div id="container">
 		<div id="header">
-		
+
 			<h1 style="font-size:50px;padding-top:10px;">
 			<?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
 
-			<div Align="right">	
+
+			<div Align="right">
+				<!---ログイン判定ここから-------------->
+				<?php if (!AuthComponent::user()):
+				 echo 'ログインしてください';
+			 else:
+				 echo 'ようこそ'.AuthComponent::user('username').'さん!' ;
+			 endif;
+				 ?>
+				<!---ログイン判定ここまで-------------->
 				<?php echo $this->Html->link(__('トップページ'), array('controller' => 'tops', 'action' => 'index')); ?>
+				<?php if(AuthComponent::user('id')): ?>
 				<?php echo $this->Html->link(__('マイページ'), array('controller' => 'plans', 'action' => 'index')); ?>
+
+				<?php echo $this->Html->link(__('ログアウト'), array('controller' => 'users', 'action' => 'logout')); ?>
+			<?php else: ?>
 				<?php echo $this->Html->link(__('ログイン'), array('controller' => 'users', 'action' => 'login')); ?>
+			<?php endif ?>
 			</div>
 
 		</div>

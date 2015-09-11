@@ -69,8 +69,8 @@ public function logout() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('登録が完了しました。ようこそ!'));
-				return $this->redirect(array('controller' => 'plans', 'action' => 'index'));
+				$this->Session->setFlash(__('登録が完了しました。ログインしてください!'));
+				return $this->redirect(array('controller' => 'plans', 'action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
