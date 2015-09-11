@@ -38,7 +38,7 @@
 					地下鉄
 			<?php elseif($view['trans'] == 'バス'):?>
 				<img src="http://www.town.minamichita.lg.jp/main/soumu/images/bus1.jpg" height="150px" width="150px" style="vertical-align: middle">
-					地下鉄
+					バス
 				<?php else:?>
 					ほふく前進でもして行くんだな!m9(^Д^)ﾌﾟｷﾞｬｰ
 			<?php endif; ?>
