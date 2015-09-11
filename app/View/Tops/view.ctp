@@ -1,4 +1,8 @@
 <div class="plans view">
+
+<?php
+$no = $_REQUEST["no"];
+?>
 <!--<h2><?php echo __('Plan'); ?></h2>-->
 	<h2>Plan:<?php echo h($plan['Plan']['name']); ?></h2>
 
@@ -60,6 +64,18 @@
 	<span style="color: black;">人数:<?php echo h($plan['Plan']['member']); ?></span>
 	</br>
 	<span style="color: black;">費用:<?php echo h($plan['Plan']['cost']); ?></span>
+	
+
+	<!--<?php echo $this->Html->link(__('お気に入り登録'), array('action' => 'view', $plan['Plan']['id'])); ?> -->
+
+
+
+	<?php if $no == 0:?>
+	<p><a href="http://192.168.33.10/odekake/tops/view/$plan['Plan']['id']?no=1"></a></p>
+	<?php else ?>
+
+
+
 	</div>
 
 <?php echo $this->Form->create('Review'); ?>

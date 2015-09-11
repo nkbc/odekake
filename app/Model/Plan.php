@@ -18,7 +18,10 @@ class Plan extends AppModel {
     public $hasMany = array(
          'PlanSpot' => array(
              'order' => 'sort'
-					)
+					),
+         // 'PlanUser' => array(
+         //        'order' => 'user'
+         //  )
     );
 	
 	
