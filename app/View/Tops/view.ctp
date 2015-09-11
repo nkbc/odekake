@@ -36,6 +36,9 @@
 			<?php elseif($view['trans'] == '電車' || $view['trans'] == '地下鉄'):?>
 				<img src="http://www.geocities.jp/motorcity_pit8419/subway/F1529.jpg" height="150px" width="150px" style="vertical-align: middle">
 					地下鉄
+			<?php elseif($view['trans'] == 'バス'):?>
+				<img src="http://www.town.minamichita.lg.jp/main/soumu/images/bus1.jpg" height="150px" width="150px" style="vertical-align: middle">
+					バス
 				<?php else:?>
 					ほふく前進でもして行くんだな!m9(^Д^)ﾌﾟｷﾞｬｰ
 			<?php endif; ?>
@@ -43,7 +46,7 @@
 
 
 			<div style="border-style: solid ; border-width: 1px; padding: 10px 5px 10px 25px; border-color: black; color: blue; background-color: white; width: 600px;  border-radius: 10px;overflow : auto">
-			<!--	<font style="font-size:30px"><?php echo h($view['Spot']['name']); ?></font></br>-->
+				<font style="font-size:30px"><?php echo h($view['Spot']['name']); ?></font></br>
 				<?php echo $this->Html->link($view['Spot']['name'], array('controller' => 'spots', 'action' => 'view',$view['Spot']['id'])); ?>
 				<?php if($view['Spot']['imageurl']) :?>
 				<img src="<?php echo '/odekake' . $view['Spot']['imageurl'] ?>"　style="height:150px; width:200px;vertical-align: middle;">
