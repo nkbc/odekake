@@ -7,10 +7,10 @@
 	<div font-size="250" style="border-style: solid ; border-width: 1px; padding: 10px 5px 10px 50px; border-color: black; color: blue; background-color: white; width: 800px;  border-radius: 10px; box-shadow: 5px 5px 5px #AAA;overflow : visible; ">
 
 		<div style="border-style: solid ; border-width: 1px; padding: 10px 5px 10px 25px; border-color: black; color: blue; background-color: white; width: 600px;  border-radius: 10px;overflow :auto;">
-		<?php if($plan['Plan']['start'] == '博多駅'):?>
+		<?php if($plan['Plan']['start'] == '博多駅' || $plan['Plan']['start'] == '博多'):?>
 		<font style="font-size:30px"><?php echo h($plan['Plan']['start']); ?></font></br>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/JR_Hakata_City_2011_Jan.jpg" style=" vertical-align: middle;height:150px;width:200px;">
-		<?php elseif($plan['Plan']['start'] == '天神駅'):?>
+		<?php elseif($plan['Plan']['start'] == '天神駅' || $plan['Plan']['start'] == '天神'):?>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Solaria_Terminal_Building_-_01.JPG" style=" vertical-align: middle;height:150px;width:200px;">
 		<?php else:?>
 			<img src="http://img.laughy.jp/13500/default_26b4eedced17d470ff6625d2dd0d11a4.jpg" style=" vertical-align: middle;height:150px;width:200px;">
