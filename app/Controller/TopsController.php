@@ -143,11 +143,11 @@ class TopsController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
-	public function favorite($id = null){
+/*	public function favorite($id = null){
 		$useid = AuthComponent::user('id');
 		$this->Plan->PlanUser->find('all');
 
-	}
+	}*/
 
 
 }
