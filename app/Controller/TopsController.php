@@ -14,9 +14,23 @@ class TopsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+	public $components = array(
+		'Paginator', 
+		'Session',
+		'Search.Prg' => array(
 
-	public $uses = array('Plan');
+			'commonProcess' => array(
+
+				'paramType' => 'querystring',
+
+				'filterEmpty' =>  true,
+			)
+		)
+	);		
+
+	public $uses = array('Plan','PlanSpot','Spot');
+
+	public $presetVars = true;
 
 
 /**
@@ -26,6 +40,11 @@ class TopsController extends AppController {
  */
 	public function index() {
 		$this->Plan->recursive = 0;
+		
+	    $this->Prg->commonProcess();
+
+    	$this->Paginator->settings['conditions'] = $this->Plan->parseCriteria($this->Prg->parsedParams());
+
 		$this->set('plans', $this->Paginator->paginate());
 	}
 

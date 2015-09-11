@@ -1,6 +1,19 @@
-<!--planのとこ-->
+<!--ジャンルのとこ-->
+
 <div class="plans index">
-	<h2><?php echo __('Plans'); ?></h2>
+
+	<h2><?php echo __('ジャンル'); ?></h2>
+
+
+<!--		<?php echo $this->Form->create();
+			echo $this->Form->submit(__('検索'), array('div' => false));	
+
+			
+		echo $this->Form->end();?>-->
+		
+<!--プラン一覧のとこ-->
+
+	<h2><?php echo __('プラン一覧'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>
@@ -10,7 +23,7 @@
 					<th><?php echo $this->Paginator->sort('member'); ?></th>
 					<th><?php echo $this->Paginator->sort('cost'); ?></th>
 					<th><?php echo $this->Paginator->sort('season'); ?></th>
-<!--					<th class="actions"><?php echo __('Actions'); ?></th>-->
+
 			</tr>
 		</thead>
 	<tbody>
@@ -22,10 +35,7 @@
 		<td><?php echo h($plan['Plan']['member']); ?>&nbsp;</td>
 		<td><?php echo h($plan['Plan']['cost']); ?>&nbsp;</td>
 		<td><?php echo h($plan['Plan']['season']); ?>&nbsp;</td>
-<!--		<td class="actions">
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $plan['Plan']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $plan['Plan']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $plan['Plan']['id']))); ?>
-		</td> トップ画面なのでいらないかと-->
+
 	</tr>
 <?php endforeach; ?>
 	</tbody>
@@ -45,11 +55,25 @@
 	</div>
 </div>
 
-<!--アクションのボタン-->
+<!--Actions-->
 
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('プランを登録'), array('controller' => 'plans', 'action' => 'add')); ?></li>
+		<li><?php echo $this->Form->create();
+			echo $this->Form->input('keyword', array(
+					'style' => 'width:100px',
+			        'div' => false,
+			        'label' => 'キーワード検索'
+			    )		
+			);	
+	
+		echo $this->Form->submit(__('検索'), array(
+		        'div' => false
+		    )
+		);	
+
+	echo $this->Form->end();?></li>
 	</ul>
 </div>
