@@ -24,8 +24,7 @@
 <div class="plans form">
 
 <body>
-	 <?php $a ="New Spot"; ?>
-			<h1><?php echo $this->Html->link($a, array('controller' => 'tops', 'action' => 'index')); ?></h1>
+
 <?php echo $this->Form->create('Plan'); ?>
 
 <h2><?php echo __('プランの登録'); ?></h2>
