@@ -145,7 +145,7 @@ class TopsController extends AppController {
 
 	public function favorite($id = null){
 		$useid = AuthComponent::user('id');
-		$this->Plan->PlanUser->find('all','conditions' =>)
+		$this->Plan->PlanUser->find('all');
 
 	}
 
