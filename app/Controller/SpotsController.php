@@ -60,7 +60,9 @@ class SpotsController extends AppController {
 						'limit' => 1
 				]);
 
-				$datas[0]['Spot']['imageurl'] = $datas[0]['Spot']['image']['file_path'];
+				if (!empty($datas[0]['Spot']['image']['file_path'])) {
+								$datas[0]['Spot']['imageurl'] = str_replace('/var/www/html/odekake/app/webroot', '', $datas[0]['Spot']['image']['file_path']);
+				}
 
 				if($this->Spot->saveAll($datas)){
 					$this->Session->setFlash(__('The spot has been saved.'));
