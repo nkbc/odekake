@@ -5,7 +5,8 @@
        "composer/installers": "*",
        "cakephp/debug_kit": ">=2.2.0",
        "cakedc/migrations": "*",
-       "fusic/filebinder": "*"
+       "fusic/filebinder": "*",
+       "cakedc/search": "*"
 
     },
     "config": {
