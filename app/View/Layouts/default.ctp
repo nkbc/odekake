@@ -6,7 +6,7 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  */
 
-$toptitle = '１日おでかけ';
+$toptitle = 'おでかけ@Fukuoka';
 ?>
 <!DOCTYPE html>
 <html>
