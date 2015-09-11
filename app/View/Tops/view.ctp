@@ -57,11 +57,11 @@
 
 
 	</br>	
-	<span style="color: black;">出発地点:<?php echo h($plan['Plan']['start']); ?></span>
+	<span style="color: black; font-size:20px;">出発地点:<?php echo h($plan['Plan']['start']); ?></span>
 	</br>
-	<span style="color: black;">人数:<?php echo h($plan['Plan']['member']); ?></span>
+	<span style="color: black;font-size:20px;">人数:<?php echo h($plan['Plan']['member']); ?></span>
 	</br>
-	<span style="color: black;">費用:<?php echo h($plan['Plan']['cost']); ?></span>
+	<span style="color: black;font-size:20px;">費用:<?php echo h($plan['Plan']['cost']); ?></span>
 	
 
 	<!--<?php echo $this->Html->link(__('お気に入り登録'), array('action' => 'view', $plan['Plan']['id'])); ?> -->
