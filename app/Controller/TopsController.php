@@ -14,9 +14,10 @@ class TopsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Session');
+	public $components = array('Paginator', 'Session','Filebinder.Ring');
 
-	public $uses = array('Plan');
+	public $uses = array('Plan','Spot');
+
 
 
 /**
@@ -44,8 +45,19 @@ class TopsController extends AppController {
 
 		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
 		$plan =$this->Plan->find('first', $options);
+		$this->Ring->bindUp();
 		$this->log($plan,LOG_DEBUG);
 		$this->set('plan', $plan);
+
+		if ($this->request->is('post')) {
+			$this->Plan->create();
+			if ($this->Plan->save($this->request->data)) {
+				$this->Session->setFlash(__('The plan has been saved.'));
+				return $this->redirect(array('action' => 'view'));
+			} else {
+				$this->Session->setFlash(__('The plan could not be saved. Please, try again.'));
+			}
+		}
 		
 	}
 
@@ -112,15 +124,5 @@ class TopsController extends AppController {
 	}
 
 
-
-/*	public function detail($id = null){
-	
-		if (!$this->Plan->exists($id)) {
-			throw new NotFoundException(__('Invalid plan'));
-		}
-		$options = array('conditions' => array('Plan.' . $this->Plan->primaryKey => $id));
-		$this->set('plan', $this->Plan->find('first', $options));
-	
-	}*/
 
 }

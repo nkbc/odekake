@@ -12,6 +12,7 @@ class Plan extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
+	public $actsAs = array('Filebinder.Bindable');
 //	Public $useTable = 'spots';
     public $hasMany = array(
          'PlanSpot' => array(
