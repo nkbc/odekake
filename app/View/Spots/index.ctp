@@ -33,7 +33,7 @@
 			<!-- <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $spot['Spot']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $spot['Spot']['id']))); ?> -->
 			<?php echo $this->Html->link(__('見る'), array('action' => 'view', $spot['Spot']['id'])); ?>	<!--	変更	-->
 			<?php echo $this->Html->link(__('編集'), array('action' => 'edit', $spot['Spot']['id'])); ?>	<!--	変更	-->
-			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $spot['Spot']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $spot['Spot']['id']))); ?>	<!--	変更	-->
+			<?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $spot['Spot']['id']), array('confirm' => __('本当に削除しますか？', $spot['Spot']['id']))); ?>	<!--	変更	-->
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -47,18 +47,18 @@
 	?>	</p>
 	<div class="paging">
 	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->prev('< ' . __('前へ'), array(), null, array('class' => 'prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+		echo $this->Paginator->next(__('次へ') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
 </div>
 <div class="actions">
-<h3><?php echo __('Actions'); ?></h3>
+<h3><?php echo __('レッツ アクティブ'); ?></h3>
 	<ul>
 		<!-- <li><?php echo $this->Html->link(__('New Spot'), array('action' => 'add')); ?></li> -->
-		<li><?php echo $this->Html->link(__('スポットの追加'), array('action' => 'add')); ?></li>	<!--	変更	-->
-		<li><?php echo $this->Html->link(__('List Genres'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Genre'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('スポットの登録'), array('action' => 'add')); ?></li>	<!--	変更	-->
+		<li><?php echo $this->Html->link(__('ジャンル一覧'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('ジャンルの登録'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

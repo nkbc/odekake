@@ -14,7 +14,7 @@
 		echo $this->Form->input('comment',['label' => '説明']);	//	変更
 		echo $this->Form->input('latitude',['label' => '緯度']);	//	変更
 		echo $this->Form->input('longitude',['label' => '経度']);	//	変更
-		echo $this->Form->input('image', array('type' => 'file'));
+		echo $this->Form->input('image', array('label' => '写真の投稿','type' => 'file'));
 	?>
 	</fieldset>
 <!-- <?php echo $this->Form->end(__('Submit')); ?> -->
@@ -23,11 +23,11 @@
 
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('レッツ アクティブ'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Spots'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Genres'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Genre'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('スポット一覧'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('ジャンル一覧'), array('controller' => 'genres', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('ジャンルの登録'), array('controller' => 'genres', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
