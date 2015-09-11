@@ -5,15 +5,45 @@
 	<h2><?php echo __('ジャンル'); ?></h2>
 
 
-<!--		<?php echo $this->Form->create();
-			echo $this->Form->submit(__('検索'), array('div' => false));	
 
-			
-		echo $this->Form->end();?>-->
+<!--genre_id=1のジャンル-->
+
+    	<?php echo $this->Html->link('まったり', /*表示させる名前をここで変更*/
+				array('controller' => 'Tops',
+						'action' => 'index',
+						'?' => [
+							'genre_id' => 1	
+						]
+						));	
+		?>
+
+<!--genre_id=2のジャンル-->
+
+		<?php echo $this->Html->link('ゆったり', /*表示させる名前をここで変更*/
+				array('controller' => 'Tops',
+						'action' => 'index',
+						'?' => [
+							'genre_id' => 2
+						]
+						));	
+		?>
+		
+<!--genre_id=3のジャンル-->
+
+		<?php echo $this->Html->link('げんき', /*表示させる名前をここで変更*/
+				array('controller' => 'Tops',
+						'action' => 'index',
+						'?' => [
+							'genre_id' => 3
+						]
+						));	
+		?>
+
+
 		
 <!--プラン一覧のとこ-->
 
-	<h2><?php echo __('プラン一覧'); ?></h2>
+	<div style='margin-top:20px'><h2><?php echo __('プラン一覧'); ?></h2></div>
 	<table cellpadding="0" cellspacing="0">
 		<thead>
 			<tr>

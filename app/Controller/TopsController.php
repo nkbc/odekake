@@ -15,7 +15,7 @@ class TopsController extends AppController {
  * @var array
  */
 
-	public $components = array(
+	public $components = array( /*使うプラグイン*/
 		'Paginator', 
 		'Session',
 		'Filebinder.Ring',

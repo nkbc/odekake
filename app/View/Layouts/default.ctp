@@ -30,7 +30,8 @@ $toptitle = '１日おでかけ';
 	<div id="container">
 		<div id="header">
 		
-			<h1 style="font-size:50px;padding-top:10px;"><?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
+			<h1 style="font-size:50px;padding-top:10px;">
+			<?php echo $this->Html->link($toptitle, array('controller' => 'tops', 'action' => 'index')); ?></h1>
 
 			<div Align="right">	
 				<?php echo $this->Html->link(__('トップページ'), array('controller' => 'tops', 'action' => 'index')); ?>

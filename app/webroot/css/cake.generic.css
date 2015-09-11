@@ -82,7 +82,7 @@ p {
 }
 #header h1 {
 	line-height:30px;
-	background: #003d4c url('../img/cake.icon.png') no-repeat left;
+	background: #000 url('../img/cake.icon.png') no-repeat left;
 	color: #fff;
 	padding: 0px 30px;
 }
