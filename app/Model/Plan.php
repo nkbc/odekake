@@ -41,12 +41,7 @@ class Plan extends AppModel {
          'method' => 'findByGenre'
         ),
 
-
     );
 	
-	public function findByGenre($data = array()) {
-		$condition[1] = array(
-			'PlanSpot.id' => $data['genre_id']
-		);
-	}
+	
 }
