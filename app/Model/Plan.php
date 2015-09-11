@@ -38,6 +38,7 @@ class Plan extends AppModel {
          'genre_id' => array(
 
          'type' => 'query',
+
          'method' => 'findByGenre'
         ),
 

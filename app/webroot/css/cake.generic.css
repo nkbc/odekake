@@ -80,11 +80,11 @@ p {
 
 #header{
 	padding: 10px 20px;
-	background-image: url('../img/cake.icon.png');
+	background-image: url('../img/syashin.jpg');
 }
 #header h1 {
 	line-height:30px;
-	background:  url('../img/cake.icon.png') no-repeat left;
+	background:  url('../img/syashin.jpg') no-repeat left;
 	color: #fff;
 	padding: 0px 30px;
 }
